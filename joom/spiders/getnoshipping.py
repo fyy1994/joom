@@ -105,7 +105,7 @@ class GetnoshippingSpider(scrapy.Spider):
 
         # print(sql)
         try:
-            pass
+            print(order_id + "订单物流信息已插入")
             # # 执行sql语句
             cursor.execute(sql)
             # # 执行sql语句

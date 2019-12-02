@@ -154,6 +154,7 @@ class GetorderSpider(scrapy.Spider):
         #       (tracking_true, delivered, depth, tracking_id, trackingNumber, arrived, passedCustoms, order_id)
         # print(sql)
         try:
+            print(order_id + "订单数据已插入")
             # 执行sql语句
             cursor.execute(sql)
             # 执行sql语句

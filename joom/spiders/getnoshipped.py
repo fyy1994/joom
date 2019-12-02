@@ -104,6 +104,7 @@ class GetnoshippingSpider(scrapy.Spider):
               (tracking_true, delivered, depth, tracking_id, trackingNumber, arrived, passedCustoms, order_id)
         # print(sql)
         try:
+            print(order_id + "订单物流信息已更新")
             # 执行sql语句
             cursor.execute(sql)
             # 执行sql语句

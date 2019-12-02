@@ -51,6 +51,7 @@ class GetmbexpresstimeSpider(scrapy.Spider):
         # SQL 查询还没有查询物流信息语句
         # sql = "SELECT order_id.order_id FROM order_id LEFT JOIN mb_expresstime ON mb_expresstime.order_id = order_id.order_id  WHERE TO_DAYS( NOW( ) ) - TO_DAYS( order_id.order_time ) <=10 AND mb_expresstime.order_id IS NULL"
         sql = "SELECT * FROM view_mb_express "
+        # sql = "SELECT order_id FROM wuliu1"
         i = 0
         try:
             # 执行SQL语句
@@ -194,6 +195,12 @@ class GetmbexpresstimeSpider(scrapy.Spider):
                     # 执行sql语句
                     db.commit()
                 except:
+                    print("err %s: " % sql)
+                    f = open('123.txt', 'a')
+                    f.writelines(repr(sql))
+                    f.close()
+
+
                     # 发生错误时回滚
                     db.rollback()
 

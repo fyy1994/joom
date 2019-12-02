@@ -7,8 +7,8 @@ import re
 
 
 
-class UpdaterefundSpider(scrapy.Spider):
-    name = 'updaterefund'
+class UpdatewuliuwentiSpider(scrapy.Spider):
+    name = 'updatewuliuwenti'
     allowed_domains = ['joom']
     # start_urls = ['http://joom/']
 
@@ -39,7 +39,7 @@ class UpdaterefundSpider(scrapy.Spider):
 
         # SQL 查询还没有查询物流信息语句
         # sql = "SELECT order_id FROM jorder WHERE order_status = 'fulfilledOnline' OR order_status = 'approved' "
-        sql = "SELECT order_id FROM jorder WHERE order_status != 'refunded' AND note != 3"
+        sql = "SELECT 订单号 FROM view_wenti"
 
         i = 0
         try:
